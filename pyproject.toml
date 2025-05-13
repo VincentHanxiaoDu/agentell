@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentell"
+version = "0.1.0"
+description = "An agent-based intelligent system framework"
+readme = "README.md"
+authors = [
+  { name = "AgentEll Team", email = "info@agentell.com" }
+]
+requires-python = ">=3.8"
+keywords = ["ai", "agent", "llm", "tools", "automation"]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "black",
+  "ruff"
+]
+
+[tool.setuptools]
+packages = ["agentell"]
+
+[tool.setuptools.package-dir]
+"" = "."
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
