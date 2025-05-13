@@ -13,7 +13,7 @@ Agentell is a framework for building intelligent agent-based systems using large
 ## Installation
 
 ```bash
-pip install agentell
+pip install git+https://github.com/VincentHanxiaoDu/agentell.git
 ```
 
 ## Examples

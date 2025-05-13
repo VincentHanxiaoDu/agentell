@@ -24,7 +24,7 @@ dev = [
 packages = ["agentell"]
 
 [tool.setuptools.package-dir]
-"" = "."
+"" = "agentell"
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
