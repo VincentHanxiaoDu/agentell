@@ -7,9 +7,6 @@ name = "agentell"
 version = "0.1.0"
 description = "An agent-based intelligent system framework"
 readme = "README.md"
-authors = [
-  { name = "AgentEll Team", email = "info@agentell.com" }
-]
 requires-python = ">=3.8"
 keywords = ["ai", "agent", "llm", "tools", "automation"]
 
@@ -24,7 +21,7 @@ dev = [
 packages = ["agentell"]
 
 [tool.setuptools.package-dir]
-"" = "agentell"
+"" = "."
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
