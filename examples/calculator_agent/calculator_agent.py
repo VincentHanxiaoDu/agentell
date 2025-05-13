@@ -53,10 +53,10 @@ class CalculatorAgent(SyncAgent):
                     llm_response = self._llm.completions(
                         prompt=prompt, stream=True, tools=tools, function_call="auto"
                     )
-                    parsed_sse = OpenRouterChatLLM.parse_sse(llm_response)
+                    parsed_http_stream = OpenRouterChatLLM.parse_http_stream(llm_response)
                     is_responding = False
                     all_tool_calls = []
-                    for chunk in OpenRouterChatLLM.get_formatted_sse(parsed_sse):
+                    for chunk in OpenRouterChatLLM.get_formatted_http_stream(parsed_http_stream):
                         if chunk["type"] == "chat.completion.chunk":
                             self.io_handler.push(chunk["data"])
                             is_responding = True

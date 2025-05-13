@@ -15,8 +15,8 @@ class OpenRouterChatLLM(OpenAICompatAPI):
         self._headers = self._auth_header
 
     @staticmethod
-    def parse_sse(response: requests.Response, chunk_size=1024):
-        """Parse the SSE response from OpenRouter.
+    def parse_http_stream(response: requests.Response, chunk_size=1024):
+        """Parse the HTTP stream response from OpenRouter.
 
         Args:
             response: The SSE response from OpenRouter.
@@ -49,8 +49,8 @@ class OpenRouterChatLLM(OpenAICompatAPI):
                     break
 
     @staticmethod
-    def get_formatted_sse(parsed_sse):
-        """Format the SSE response from OpenRouter to be used by the agent.
+    def get_formatted_http_stream(parsed_http_stream):
+        """Format the HTTP stream response from OpenRouter to be used by the agent.
 
         Args:
             response: The SSE response from OpenRouter.
@@ -63,7 +63,7 @@ class OpenRouterChatLLM(OpenAICompatAPI):
                 - "tool_calls": A list of tool calls.
         """
         all_tool_calls = {}
-        for chunk in parsed_sse:
+        for chunk in parsed_http_stream:
             if "error" in chunk:
                 raise RuntimeError(chunk)
             msg_id = chunk["id"]
