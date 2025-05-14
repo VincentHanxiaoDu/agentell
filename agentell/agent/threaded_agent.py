@@ -1,6 +1,6 @@
 from typing import Optional
-from agent.agent_task import AgentTask, TaskStatus
-from agent import BaseAgent
+from .agent_task import AgentTask, TaskStatus
+from .base import BaseAgent
 import threading
 import queue
 from datetime import datetime

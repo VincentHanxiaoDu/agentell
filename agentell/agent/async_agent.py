@@ -1,8 +1,8 @@
 import asyncio
 from datetime import datetime
-from agentell.agent.agent_task import AgentTask, TaskStatus
+from .agent_task import AgentTask, TaskStatus
 from typing import Optional
-from agentell.agent import AsyncBaseAgent
+from .base import AsyncBaseAgent
 
 
 class AsyncAgent(AsyncBaseAgent):
