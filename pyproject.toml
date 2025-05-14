@@ -11,7 +11,7 @@ requires-python = ">=3.8"
 keywords = ["ai", "agent", "llm", "tools", "automation"]
 
 [tool.setuptools]
-packages = { find = { where = ["."], include = ["agentell"] } }
+packages = { find = { where = ["."], include = ["agentell*"] } }
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
