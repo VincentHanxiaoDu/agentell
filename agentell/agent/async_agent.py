@@ -2,7 +2,7 @@ import asyncio
 from datetime import datetime
 from .agent_task import AgentTask, TaskStatus
 from typing import Optional
-from .base import AsyncBaseAgent
+from .agent import AsyncBaseAgent
 
 
 class AsyncAgent(AsyncBaseAgent):

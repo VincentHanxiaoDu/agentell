@@ -2,4 +2,4 @@ from .agent_msg import *
 from .agent_task import *
 from .async_agent import *
 from .threaded_agent import *
-import base
+from .agent import *
