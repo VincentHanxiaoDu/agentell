@@ -72,6 +72,11 @@ class OpenRouterChatLLM(OpenAICompatAPI):
                 tool_call_id = (msg_id, tool_call["index"])
                 if tool_call_id not in all_tool_calls:
                     all_tool_calls[tool_call_id] = tool_call
+                    if (
+                        all_tool_calls[tool_call_id]["function"].get("arguments")
+                        is None
+                    ):
+                        all_tool_calls[tool_call_id]["function"]["arguments"] = ""
                 else:
                     all_tool_calls[tool_call_id]["function"]["arguments"] += tool_call[
                         "function"
